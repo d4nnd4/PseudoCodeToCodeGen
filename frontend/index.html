@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pseudo2Code</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Pseudo<span>2</span>Code <small>demo</small></div>
+    <div id="status" class="status" title="Estado de Ollama">
+      <span class="dot"></span><span class="status-text">Conectando…</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Historial -->
+    <aside class="panel history">
+      <div class="panel-head">
+        <h2>Historial</h2>
+        <button id="refresh" class="icon-btn" title="Recargar">⟳</button>
+      </div>
+      <ul id="history-list"></ul>
+    </aside>
+
+    <!-- Entrada -->
+    <section class="panel input">
+      <div class="panel-head">
+        <h2>Pseudocódigo</h2>
+        <button id="example" class="link-btn">Cargar ejemplo</button>
+      </div>
+      <div id="pseudo-editor" class="editor"></div>
+      <div class="controls">
+        <input id="name" type="text" placeholder="Nombre (opcional)" maxlength="80" />
+        <select id="language"></select>
+        <button id="generate" class="primary">Generar ▶</button>
+      </div>
+    </section>
+
+    <!-- Salida -->
+    <section class="panel output">
+      <div class="panel-head">
+        <h2 id="output-title">Código generado</h2>
+        <div class="actions">
+          <span id="saved-path" class="path"></span>
+          <button id="copy" disabled>Copiar</button>
+          <button id="save" disabled>Guardar cambios</button>
+          <button id="download" disabled>Descargar</button>
+        </div>
+      </div>
+      <div id="code-editor" class="editor"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="vendor/monaco/vs/loader.js"></script>
+  <script src="rpgle.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
